@@ -1,0 +1,91 @@
+#home.nav-offset
+  = image_tag 'desk-scene1-titles.png', class: 'img-fluid'
+
+
+#about.pad-section
+  .container
+    .row
+      .col-sm-6.text-xs-center
+        %h1 
+          Join the <i>Meta.versatile</i>!
+      .col-sm-6.text-xs-center
+        %h2 Virtual Reality Developers Network
+        %p.lead 
+          A community-driven developer network and platform for VR/AR professionals to profile, showcase, team up and explore skilled talent and resources.
+        %p.lead
+          Connect with people. Share resources. 
+          %br
+          Showcase your work. Explore in VR. 
+ 
+
+#services.pad-section
+  .container
+    %h2.text-xs-center Stake your place among the Meta.versatile
+    %br
+    .row.text-xs-center
+      .col-sm-3.col-xs-6
+        %i.fa.fa-user
+        %h4 Profile
+        %p Register your talents, skills and interests as a player in the virtual, augmented and mixed reality developer community. 
+
+        
+      .col-sm-3.col-xs-6
+        %i.fa.fa-diamond
+        %h4 Showcase
+        %p Post your 3D work, browsable in VR. Including 360-degree media. 3D model gallery. VR "trailers". YouTube demo theatre.
+        %p  
+      .col-sm-3.col-xs-6
+        %i.fa.fa-thumbs-o-up
+
+        %h4 Reputation
+        %p Self-rated skills and experience levels. Peer endorcements. Tie into your favorite social sites.
+      .col-sm-3.col-xs-6
+        %i.fa.fa-globe
+        %h4 Community 
+        %p It's about you and us. Peer audience, professional connections, sharing. 
+
+#information.pad-section
+  .container
+    .row
+      .col-sm-6
+        .panel.panel-default
+          .panel-heading
+            %h2 Project Status
+          .panel.panel-default
+            This project is just getting started. We're raising interest and collecting feedback at this early stage to prioritize features and usage scenarios. Getting new users on-board quickly is key. So if it looks interesting for you, please provide your email and answer a few sign-up questions. 
+            %p.text-xs-center
+              =# link_to "Yes, I'm Interested", new_profiles_path, class: 'btn btn-default btn-lg'
+
+            
+      .col-sm-6
+        .panel.panel-default
+          .panel-heading
+            %h2 Architecture Vision
+          .panel.panel-default
+            %ul
+              %li Web-based interface to sign-up, build your personal profile and personal preferences. 
+              %li 3D VR front-end to browse and interact.
+              %li Open API for accessing data, with authentication and security. 
+              %li Tools to build custom rooms to showcase your work and present your personal profile
+              %li Cross-device: mobile VR (Cardboard, GearVR), desktop VR (Rift, Vive), AR (Hololens, Meta2)
+              %li Support WebVR, AltspaceVR, HighFidelity and other platforms
+            %p
+
+
+
+#contact.pad-section
+  .container
+    .row
+      .col-sm-12.text-xs-center
+        %h3 Join the Meta.versatile
+        %h4 Enter the Meta.versatile
+        %h4 Explore the Meta.versatile
+        %h4 Rule the Meta.versatile
+        %p{ style: 'margin-top: 2em; font-style: italic'} Welcome artists, modellers, programmers, game designers, animators, sound designers, project managers, newbies and experienced alike!
+        %p{ style: 'margin-top: 2em; font-style: italic'} 
+          =# link_to 'Sign Up', new_profiles_path, class: 'btn btn-default btn-lg'
+
+%footer
+  %hr
+  .container
+    %p.text-xs-right{ style: "font-size:x-small"} Copyright &copy; Parkerhill Technology Group LLC 2016

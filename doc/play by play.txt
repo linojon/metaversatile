@@ -1,0 +1,51 @@
+[17:34][jonathan@Jonathans-iMac:~/Projects/rails/metaversatile]$ ruby -v
+ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin15]
+[17:45][jonathan@Jonathans-iMac:~/Projects/rails/metaversatile]$ rails -v
+Rails 5.0.0
+
+$ rails new metaversatile -T
+$ git init
+$ git add .
+$ git commit -am "initial commit"
+github
+
+Gemfile
+    gem 'haml-rails'
+$ bin/rake haml:erb2haml
+
+Gemfile
+    gem 'rspec-rails'
+$ bin/rails g rspec:install
+$ bundle binstubs rspec-core
+
+Gemfile 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+
+$ bundle install --without production
+
+**bootstrap 4**
+http://v4-alpha.getbootstrap.com/
+http://bootstrap4.guide/
+
+Gemfile:
+    gem 'bootstrap'
+
+# http://tether.io/
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+     application.scss:
+@import "bootstrap";
+     application.js:
+//= require jquery
+//= tether
+//= require bootstrap-sprockets
+
+
+

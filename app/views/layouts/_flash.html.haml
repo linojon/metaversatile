@@ -1,0 +1,6 @@
+- if flash.present?
+  .alert-fixed
+    - flash.each do |level, msg|
+      = content_tag :div, class: flash_class_for(level) do
+        %button.close{ type: :button, data_dismiss: :alert, aria_hidden: true } &times;
+        = raw msg

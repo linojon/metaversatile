@@ -1,0 +1,19 @@
+%nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      %button.navbar-toggle{ type: "button", data: { toggle: "collapse", target: "#navbar1" }}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to 'Sandlightning', root_path, class: 'navbar-brand nav-link'
+
+    #navbar1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to root_path, data: {toggle:"collapse", target:"#navbar1"} do
+            %span.glyphicon.glyphicon-home
+        %li
+          = link_to 'Forums', forums_path, class: "btn btn-success", data: {toggle:"collapse", target:"#navbar1"}          
+        -# login buttons
+
+%div{ style: "height: 60px" }
