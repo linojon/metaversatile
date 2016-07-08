@@ -1,12 +1,11 @@
 %nav.navbar.navbar-fixed-top.navbar-light.bg-faded{ style: 'background-color: #e3f2fd;' }
-  %a.navbar-brand{href:'#'}
-    Meta.Versatile
+  = link_to 'Meta.versatile', root_path, class: 'navbar-brand'
 
   %ul.nav.navbar-nav
-    %li.nav-item= link_to 'About', '#', class: 'nav-link'
-    %li.nav-item= link_to 'Why', '#', class: 'nav-link'
-    %li.nav-item= link_to 'Info', '#', class: 'nav-link'
-    %li.nav-item= link_to 'JOIN', '#', class: 'nav-link'
+    %li.nav-item= link_to 'About', '#about', class: 'nav-link'
+    %li.nav-item= link_to 'Why', '#services', class: 'nav-link'
+    %li.nav-item= link_to 'Info', '#information', class: 'nav-link'
+    %li.nav-item= link_to 'JOIN', '#contact', class: 'nav-link'
 
   / %form.form-inline.pull-xs-right
   /   %input.form-control{ type:'text', placeholder:'search' }

@@ -7,7 +7,8 @@
 
     - if action_name == 'home'
       = render 'layouts/flash'
-      = yield    
+      .nav-offset
+        = yield    
         
     - else
       #main.container-fluid.nav-offset

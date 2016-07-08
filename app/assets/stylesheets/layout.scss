@@ -3,6 +3,11 @@
   margin-top: 50px;
 }
 
+.nav-anchor {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
 // .vcenter {
 //   display: flex;
 //   flex-direction: column;
@@ -12,7 +17,7 @@
 
 /* padded section */
 .pad-section {
-  padding: 50px 0;
+  padding: 100px 0 50px; // 50 padding + 50 for nav-anchor
 }
 .pad-section img {
   width: 100%;
