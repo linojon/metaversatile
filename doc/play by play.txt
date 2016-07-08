@@ -52,9 +52,23 @@ application.js:
 //= require bootstrap-sprockets
 
 
+Active Admin 1.0.0pre4 + Rails 5
+https://github.com/activeadmin/activeadmin
+https://github.com/activeadmin/activeadmin/tree/master/docs#activeadmin-documentation
+
+Gemfile
+    ...
+$ bin/rails g active_admin:install AdminUser
+
+Figaro
+
+Pundit
+
+gem 'simple_form'
+$ bin/rails g simple_form:install --bootstrap
 
 
-
+    
 ========
 
 irb(main):003:0> Profile.all.map &:email

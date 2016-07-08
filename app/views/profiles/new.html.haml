@@ -1,0 +1,10 @@
+.container
+  .row.text-centered
+    %h1 &nbsp;
+    %h1 Meta.versatile
+    %h2 Tell us who you are
+
+    = simple_form_for @profile do |f|
+      = f.input :email
+      = f.submit 'Next'
+  

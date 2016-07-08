@@ -1,0 +1,2 @@
+class ProfileSkillsController < ApplicationController
+end

@@ -31,13 +31,25 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'haml-rails'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0' # http://tether.io/
+end
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'figaro'
+gem 'pundit'
+gem 'simple_form'
 
-# http://tether.io/
-source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.1.0'
-end
+# for activeadmin 1.0 + rails 5
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'ransack',    github: 'activerecord-hackery/ransack'
+gem 'formtastic', github: 'justinfrench/formtastic'
+gem 'draper',     github: 'audionerd/draper', branch: 'rails5', ref: 'e816e0e587'
+# To fix a Draper deprecation error
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+
+
 
 
 group :production do
@@ -49,6 +61,12 @@ group :development, :test do
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  # https://github.com/deivid-rodriguez/pry-byebug
+  gem 'pry-byebug'
+
 end
 
 group :development do
@@ -62,6 +80,11 @@ end
 
 group :test do
   gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

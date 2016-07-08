@@ -1,0 +1,22 @@
+%h1 Edit Profile
+= simple_form_for [@user, @profile] do |f|
+  = f.input :username
+
+%p
+  name:
+  = @profile.full_name
+%p
+  email: 
+  = @profile.email
+
+%h2 Applications
+= @profile.skills.application.map(&:to_s).join(', ')
+
+%h2 Crafts
+= @profile.skills.craft.map(&:to_s).join(', ')
+
+%h2 Skills
+= @profile.skills.tool.map(&:to_s).join(', ')
+
+%p.pull-right
+  = link_to 'Edit', edit_user_profile_path(@profile.user), class: 'btn btn-primary'
