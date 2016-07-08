@@ -6,8 +6,8 @@
     = render 'layouts/navbar'
 
     - if action_name == 'home'
-      = render 'layouts/flash'
       .nav-offset
+        = render 'layouts/flash'
         = yield    
         
     - else

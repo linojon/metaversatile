@@ -1,6 +1,6 @@
 - if flash.present?
-  .alert-fixed
+  .alert-fixed.nav-anchor
     - flash.each do |level, msg|
       = content_tag :div, class: flash_class_for(level) do
-        %button.close{ type: :button, data_dismiss: :alert, aria_hidden: true } &times;
+        %button.close{ type: :button, data: {dismiss: :alert}, aria_label: 'Close' } &times;
         = raw msg
