@@ -7,6 +7,13 @@
     %li.nav-item= link_to 'Info', '#information', class: 'nav-link'
     %li.nav-item= link_to 'JOIN', '#contact', class: 'nav-link'
 
+    .pull-xs-right
+      - if current_user
+        = link_to current_user.email, user_profile_path(current_user)
+        = link_to 'log out', destroy_user_session_path, method: :delete
+      - else
+        = link_to 'log in', new_user_session_path
+
   / %form.form-inline.pull-xs-right
   /   %input.form-control{ type:'text', placeholder:'search' }
   /   %button.btn.btn-success-outline{ type:'submit' } Search

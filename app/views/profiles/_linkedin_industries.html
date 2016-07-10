@@ -1,7 +1,4 @@
-module ProfilesHelper
-
-  def industry_options_for_select
-%Q{
+<select name="industryChooser" id="industryChooser-editLocationForm" type="singleselect" aria-describedby="industryChooser-editLocationForm-error">
 <option value="">Choose industry...</option>
 <option value="47">Accounting</option>
 <option value="94">Airlines/Aviation</option>
@@ -150,7 +147,4 @@ module ProfilesHelper
 <option value="142">Wine and Spirits</option>
 <option value="119">Wireless</option>
 <option value="103">Writing and Editing</option>
-}.html_safe
-  end
-
-end
+</select>

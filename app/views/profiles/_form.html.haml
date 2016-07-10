@@ -1,0 +1,23 @@
+= simple_form_for [@user, @profile] do |f|
+  %h2 Profile
+  = f.input :username
+  = f.input :headline
+  .form-group.optional.profile_industry
+    %label.string.optional.control-label{for: :profile_industry} Industry
+    = f.select :industry,  industry_options_for_select, class: 'option form-control'
+  = f.input :bio, label: 'About me'
+
+  %h2 Protected
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :email
+
+  %h2 Web Presence
+
+  %h2 Where Work on VR/AR
+
+  %h2 Projects Portfolio
+
+  %h2 Technical Skills
+
+  = f.submit

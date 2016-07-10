@@ -1,24 +1,23 @@
 #home.nav-anchor
-  = image_tag 'desk-scene1-titles.png', class: 'img-fluid'
+  = image_tag 'desk-scene-titles2.png', class: 'img-fluid'
 
 
 #about.nav-anchor.pad-section
   .container
     .row
-      .col-sm-6.text-xs-center
-        %h1 
-          Join the <i>Meta.versatile</i>!
-        %p{ style: 'margin-top: 5em;'}
-          = link_to 'Learn more', new_profiles_path, class: 'btn btn-info btn-lg'
-
-      .col-sm-6.text-xs-center
-        %h2 Virtual Reality Developers Network
-        %p.lead 
+      .col-xs-offset-2.col-xs-8.text-xs-center
+        %p
           A community-driven developer network and platform for VR/AR professionals to profile, showcase, team up and explore skilled talent and resources.
-        %p.lead
-          Connect with people. Share resources. 
-          %br
-          Showcase your work. Explore in VR. 
+        %p
+          = link_to "Join", new_profiles_path, class: 'btn btn-info btn-lg'
+        %p
+          Connect with people.
+          %br 
+          Share resources. 
+          %br 
+          Showcase your work. 
+          %br 
+          Explore in VR. 
  
 
 #services.nav-anchor.pad-section

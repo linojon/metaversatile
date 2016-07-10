@@ -2,16 +2,16 @@ Rails.application.routes.draw do
 
   resource :profiles, only: [:new, :create]
 
-  resources :users, only: [:show] do
-    resource :profile, only: [:show, :edit, :update]
-  end
-
   resources :skills
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   devise_for :users
+
+  resources :users, only: [] do
+    resource :profile, only: [:show, :edit, :update]
+  end
 
   root 'pages#home'
   

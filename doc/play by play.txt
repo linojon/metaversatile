@@ -67,6 +67,9 @@ Pundit
 gem 'simple_form'
 $ bin/rails g simple_form:install --bootstrap
 
+---
+
+
 
     
 ========

@@ -1,8 +1,4 @@
-module ProfilesHelper
-
-  def industry_options_for_select
-%Q{
-<option value="">Choose industry...</option>
+<select name="industryChooser" id="industryChooser-editLocationForm" type="singleselect" aria-describedby="industryChooser-editLocationForm-error"><option value="">Choose industry...</option>
 <option value="47">Accounting</option>
 <option value="94">Airlines/Aviation</option>
 <option value="120">Alternative Dispute Resolution</option>
@@ -27,7 +23,7 @@ module ProfilesHelper
 <option value="109">Computer Games</option>
 <option value="3">Computer Hardware</option>
 <option value="5">Computer Networking</option>
-<option value="4">Computer Software</option>
+<option value="4" selected="selected">Computer Software</option>
 <option value="48">Construction</option>
 <option value="24">Consumer Electronics</option>
 <option value="25">Consumer Goods</option>
@@ -149,8 +145,4 @@ module ProfilesHelper
 <option value="133">Wholesale</option>
 <option value="142">Wine and Spirits</option>
 <option value="119">Wireless</option>
-<option value="103">Writing and Editing</option>
-}.html_safe
-  end
-
-end
+<option value="103">Writing and Editing</option></select>
