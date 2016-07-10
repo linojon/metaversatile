@@ -5,7 +5,8 @@
   .form-group.optional.profile_industry
     %label.string.optional.control-label{for: :profile_industry} Industry
     = f.select :industry,  industry_options_for_select, class: 'option form-control'
-  = f.input :bio, label: 'About me'
+
+  = f.input :bio, label: 'About me', as: :summernote
 
   %h2 Protected
   = f.input :first_name
