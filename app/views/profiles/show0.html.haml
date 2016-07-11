@@ -1,0 +1,62 @@
+%h1 User
+%h2 Profile
+%p
+  display name:
+  = @profile.username
+
+%p
+  headline: 
+  = @profile.headline
+
+%p
+  industry: 
+  = @profile.industry
+
+%p
+  about me: 
+  = @profile.bio.html_safe
+
+%h2 Protected
+
+%p
+  real name:
+  = @profile.full_name
+
+%p
+  email: 
+  = @profile.email
+
+%h2 Web Presence
+%ul
+  %li Website: 
+  %li Twitter:
+  %li GitHub:
+  %li Google+:
+  %li LinkedIn: 
+  %li DevPost:
+  %li StackOverflow:
+
+%H2 Where I work on VR/AR:
+%ul
+  %li Company: [current position] at [company]
+  %li School: [degree or concentration] at [school or university]
+  %li Personal [share a favorite project or something you do]
+
+%h2 Projects Portfolio
+%ul
+  %li image, title, description, links
+  %li image, title, description, links
+  %li image, title, description, links
+
+%h2 Technical Skills
+%p Applications
+= @profile.skills.application.map(&:to_s).join(', ')
+
+%p Crafts
+= @profile.skills.craft.map(&:to_s).join(', ')
+
+%p Tools
+= @profile.skills.tool.map(&:to_s).join(', ')
+
+%p.pull-right
+  = link_to 'Edit', edit_user_profile_path(@profile.user), class: 'btn btn-primary'

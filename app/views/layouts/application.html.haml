@@ -6,12 +6,11 @@
     = render 'layouts/navbar'
 
     - if action_name == 'home'
-      .nav-offset
-        = render 'layouts/flash'
-        = yield    
+      = render 'layouts/flash'
+      = yield    
         
     - else
-      #main.container-fluid.nav-offset
+      #main.container
         = render 'layouts/flash'
         = yield
 
