@@ -16,5 +16,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require summernote
+//= require cocoon
 //= require_tree .
 

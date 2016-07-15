@@ -39,7 +39,7 @@ class ProfilesController < ApplicationController
   private
   
   def profile_params
-    params.require(:profile).permit(:email, :first_name, :last_name, :username, :headline, :industry, :bio)
+    params.require(:profile).permit(:email, :first_name, :last_name, :username, :headline, :industry, :bio, social_networks_attributes: [:id, :name, :handle, :link, :_destroy])
   end
   
 end

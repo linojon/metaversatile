@@ -2,6 +2,9 @@ class Profile < ApplicationRecord
   belongs_to :user
   has_many :profile_skills, dependent: :destroy
   has_many :skills, through: :profile_skills
+  has_many :social_networks, dependent: :destroy
+
+  accepts_nested_attributes_for :social_networks, reject_if: :all_blank, allow_destroy: true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email,

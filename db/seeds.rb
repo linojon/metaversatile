@@ -43,4 +43,16 @@ if Rails.env.development?
     user.profile.save
   end
 
+  bio = 
+%Q{
+<p>Professional software developer and product manager with over 20 years hands-on entrepreneurial experience. Active virtual reality evangelist, code mentor, and podcaster.</p>
+
+<p>My latest interests are Virtual Reality and related development. I authored the book "Unity Virtual Realty Projects"​ (http://www.amazon.com/dp/178398855X) and "Cardboard VR Projects for Android" (https://www.packtpub.com/application-development/cardboard-vr-projects-android). Host of "Uncle Jonny's Virtual Reality Podcast"​ available on iTunes and Stitcher (http://unclejonny.com)</p>
+
+<p>Expertise with a broad range of software, 3D and Internet technologies, including Unity3D, Ruby on Rails, Linux and more.</p>
+}
+  jl = User.create email: 'jonathan@parkerhill.com', password: 'secret123', password_confirmation: 'secret123', 
+    profile_attributes: { email: 'jonathan@parkerhill.com', username: 'linojon', first_name: 'Jonathan', last_name: 'Linowes', headline: 'Agile applications development', industry: 4, bio: bio }
+  jl.profile.social_networks.create name: 'LinkedIn', handle: 'linojon'
+  jl.profile.social_networks.create name: 'Twitter', handle: '@linojon'
 end

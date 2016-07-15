@@ -1,12 +1,29 @@
-.row.pad-section
+.row.row-eq-height.pad-section
   .col-sm-3
     = image_tag 'generic-headshot.png'
   .col-sm-9
-    %h1= @profile.full_name
-    .headline= @profile.headline
-    .industry= 'Computer Software' # @profile.industry
+    .card.section-block
+      %h1= @profile.full_name
+      .headline
+        = @profile.headline
+      .industry
+        Industry: 
+        = industry_codes.key(@profile.industry)
 .row
-  %h2 About Me
-  .bio
-    = @profile.bio.html_safe
+  .col-sm-12
+    %h2 About Me
+    .card.section-block.bio
+      = @profile.bio.html_safe if @profile.bio.present?
+
+
+.row
+  .col-sm-12
+    %h2 Contact
+    .card.section-block.bio
+      %p
+        = link_to 'Send email', "mailto:#{@profile.email}" # replace with internal send
+      - @profile.social_networks.each do |social|
+        %p
+          = link_to social.name, social.link
+
 

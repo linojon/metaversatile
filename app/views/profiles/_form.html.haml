@@ -4,7 +4,7 @@
   = f.input :headline
   .form-group.optional.profile_industry
     %label.string.optional.control-label{for: :profile_industry} Industry
-    = f.select :industry,  industry_options_for_select, class: 'option form-control'
+    = f.select :industry,  options_for_select(industry_codes), class: 'option form-control'
 
   = f.input :bio, label: 'About me', as: :summernote
 
@@ -14,6 +14,10 @@
   = f.input :email
 
   %h2 Web Presence
+  = f.simple_fields_for :social_networks, wrapper: 'inline_form' do |s|
+    = render 'social_network_fields', f: s
+  %p
+    = link_to_add_association 'add social network', f, :social_networks
 
   %h2 Where Work on VR/AR
 

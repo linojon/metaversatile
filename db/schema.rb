@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709230259) do
+ActiveRecord::Schema.define(version: 20160714194339) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20160709230259) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "headline"
-    t.string   "industry"
+    t.integer  "industry"
     t.string   "location"
     t.text     "bio"
     t.date     "birthday"
@@ -73,6 +73,16 @@ ActiveRecord::Schema.define(version: 20160709230259) do
     t.string   "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "social_networks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "handle"
+    t.string   "link"
+    t.integer  "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_social_networks_on_profile_id"
   end
 
   create_table "users", force: :cascade do |t|

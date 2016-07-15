@@ -41,6 +41,7 @@ gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'figaro'
 gem 'pundit'
 gem 'simple_form'
+gem 'cocoon' # dynamic nested forms using jquery
 
 # for activeadmin 1.0 + rails 5
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
