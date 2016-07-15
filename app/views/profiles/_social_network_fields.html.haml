@@ -1,9 +1,9 @@
 .row.nested-fields
   .col-md-3
     = f.input :name, collection: SocialNetwork.services.keys
-  .col-md-3
-    = f.input :handle, placeholder: 'johndoe'
   .col-md-5
-    = f.input :link, label: 'and/or Link', placeholder: 'http://www.piedpiper.com/johndoe'
+    = f.input :link, placeholder: 'http://www.piedpiper.com/johndoe'
+  .col-md-3
+    = f.input :handle, placeholder: '@johndoe', label: 'and/or Handle'
   .col-md-1
     = link_to_remove_association "remove", f

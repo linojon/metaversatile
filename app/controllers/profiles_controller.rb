@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
   def edit
     @user = User.find params[:user_id]
     @profile = @user.profile
+    authorize @profile
   end
   
   def create
@@ -28,6 +29,8 @@ class ProfilesController < ApplicationController
   def update
     @user = User.find params[:user_id]
     @profile = @user.profile
+    authorize @profile
+
     if @profile.update_attributes profile_params
       redirect_to user_profile_path(@user), success: 'Profile updated'
     else

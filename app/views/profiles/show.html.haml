@@ -26,4 +26,7 @@
         %p
           = link_to social.name, social.link
 
-
+- if policy(@profile).edit?
+  .row
+    .col-sm-12
+      = link_to 'Edit Profile', edit_user_profile_path(@user), class: 'btn btn-primary'

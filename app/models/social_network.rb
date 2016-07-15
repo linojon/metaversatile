@@ -3,9 +3,9 @@ class SocialNetwork < ApplicationRecord
 
   before_save :set_link_or_handle
 
-  SERVICES = %w{LinkedIn Facebook Twitter Google+ GitHub DevPost StackOverflow}
   def self.services
     {
+      "Website" => "",
       "LinkedIn" => "https://www.linkedin.com/in/",
       "Facebook" => "https://www.facebook.com/",
       "Twitter" => "https://twitter.com/",
@@ -29,7 +29,7 @@ class SocialNetwork < ApplicationRecord
 
   def handle_to_link
     if SocialNetwork.services[name].present?
-      SocialNetwork.services[name] + handle
+      SocialNetwork.services[name] + handle.gsub('@','')
     end
   end
 
