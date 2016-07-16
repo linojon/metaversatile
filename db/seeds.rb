@@ -55,4 +55,9 @@ if Rails.env.development?
     profile_attributes: { email: 'jonathan@parkerhill.com', username: 'linojon', first_name: 'Jonathan', last_name: 'Linowes', headline: 'Agile applications development', industry: 4, bio: bio }
   jl.profile.social_networks.create name: 'LinkedIn', handle: 'linojon'
   jl.profile.social_networks.create name: 'Twitter', handle: '@linojon'
+
+  project = Project.create name: "Reality, Virtually Hackathon", description: "VR/AR/MR Hackathon at the MIT Media Lab, Oct. 7-9, 2016"
+  jl.projects << project
+  team = project.teams.create name: 'Mentors', description: 'Hackathon mentors'
+  jl.teams << team
 end

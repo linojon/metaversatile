@@ -1,0 +1,18 @@
+.row.pad-section
+  .card.section-block
+    %p Project
+    %h1= link_to @project.name, @project
+
+    %h2
+      Team:
+      = @team.name
+
+    .body-text
+      = @team.description
+
+    %h3 Members
+    %ul
+      - @team.teammates.each do |member|
+        -# small thumb etc
+        %li
+          = link_to member.profile.full_name, member

@@ -1,7 +1,8 @@
 .row.row-eq-height.pad-section
   .col-sm-3
-    = image_tag 'generic-headshot.png'
+    = image_tag 'headshot-wtf-200.jpg' #'generic-headshot.png'
   .col-sm-9
+    %h1 Profile Details
     .card.section-block
       %h1= @profile.full_name
       .headline
@@ -9,6 +10,16 @@
       .industry
         Industry: 
         = industry_codes.key(@profile.industry)
+    .card.section-block
+      %h2 Projects/Teams
+      - @user.projects.each do |project|
+        %p
+          = link_to project.name, project
+          - teams = project.teams.select {|t| t.teammates.include? @user }
+          - if teams.present?
+            &nbsp; / &nbsp;
+            = teams.map {|team| link_to team.name, [project, team] }.join(', ').html_safe
+
 .row
   .col-sm-12
     %h2 About Me

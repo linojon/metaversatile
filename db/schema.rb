@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714194339) do
+ActiveRecord::Schema.define(version: 20160715165225) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -68,6 +68,24 @@ ActiveRecord::Schema.define(version: 20160714194339) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "project_memberships", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.integer  "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_memberships_on_project_id"
+    t.index ["user_id"], name: "index_project_memberships_on_user_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string   "name"
     t.string   "category"
@@ -83,6 +101,26 @@ ActiveRecord::Schema.define(version: 20160714194339) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_social_networks_on_profile_id"
+  end
+
+  create_table "team_memberships", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_team_memberships_on_team_id"
+    t.index ["user_id"], name: "index_team_memberships_on_user_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "project_id"
+    t.integer  "status"
+    t.integer  "role"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["project_id"], name: "index_teams_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|

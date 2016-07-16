@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+
+  resources :projects do
+    resources :project_memberships
+    resources :teams
+  end
+
+  resources :teams, only: [] do
+    resources :team_memberships
+  end
+
   resource :profiles, only: [:new, :create]
 
   resources :skills
@@ -9,7 +19,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [] do
+  resources :users, only: [:show] do
     resource :profile, only: [:show, :edit, :update]
   end
 

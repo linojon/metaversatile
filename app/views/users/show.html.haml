@@ -1,0 +1,28 @@
+.row.pad-section
+  .col-sm-3
+    .card.section-block
+      %p.headshot
+        = image_tag 'headshot-wtf-200.jpg' #'generic-headshot.png'
+      %h2
+        = @profile.full_name
+      %p.headline
+        = @profile.headline
+
+      %p
+        = link_to "Profile Details", user_profile_path(@user), class: 'btn btn-secondary'
+  .col-sm-9
+    %h1 Dashboard
+    .card.section-block
+      %p Projects
+      - @user.projects.each do |project|
+        %h1= project.name
+        %p= project.description
+
+        %p Teams
+        - @user.teams.each do |team|
+          %h2 
+            TEAM: 
+            = team.name
+          %p
+            = team.description
+

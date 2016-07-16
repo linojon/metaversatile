@@ -1,0 +1,24 @@
+.row.pad-section
+  .card.section-block
+    %p Project
+    %h1= @project.name
+    .body-text
+      = @project.description
+
+  - if current_user.projects.include? @project
+    %h2 Teams
+    -# deal with long list of teams
+    - @project.teams.each do |team|
+      .card.section-block
+        %h3= link_to team.name, [@project, team]
+        .body-text
+          = team.description
+        %p Members
+        =# deal with long list of members
+        - team.teammates.each do |member|
+          -# small thumb etc
+          %div{style: "display: inline-block;"}
+            = link_to member.profile.full_name, member
+
+  - else
+    = button_to 'Join', project_project_memberships_path(@project) 
